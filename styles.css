@@ -380,6 +380,131 @@ profile-photo .img{
 }
 
 
+/*---------------------------Tech Stack---------------------------*/
+.techstack-area {
+    padding: 90px 0;
+    background-color: #202020;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.techstack-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.techstack-title h4 {
+    font-size: 40px;
+    color: #fed700;
+    margin-bottom: 15px;
+}
+
+.techstack-title p {
+    color: #e5e5e5;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 20px;
+}
+
+.skill-category {
+    background: linear-gradient(145deg, #2a2a2a, #333);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+    border-color: #fed700;
+    box-shadow: 0 6px 12px rgba(254,215,0,0.1);
+}
+
+.skill-category h3 {
+    color: #fed700;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill-badge {
+    background: #202020;
+    color: #e5e5e5;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #444;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.skill-badge:hover {
+    transform: translateY(-5px);
+    border-color: #fed700;
+    background: #2d2d2d;
+}
+
+.skill-badge i {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: #fed700;
+    transition: all 0.3s ease;
+}
+
+.skill-badge span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.skill-badge:hover i {
+    transform: scale(1.1);
+}
+
+.skill-badge:hover span {
+    color: #fed700;
+}
+
+@media only screen and (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .skill-badge {
+        min-width: 100px;
+        padding: 12px;
+    }
+    
+    .skill-badge i {
+        font-size: 1.5rem;
+    }
+    
+    .skill-badge span {
+        font-size: 0.8rem;
+    }
+    
+    .skill-category h3 {
+        font-size: 1.2rem;
+    }
+}
 
 /*---------------------------Contact Me---------------------------*/
 .contact-content{
