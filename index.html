@@ -1,495 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pratham Sharma</title>
-    <link rel="icon" href="https://i.ibb.co/zRsTj3p/Frame-1-37.png" />
 
-    <link rel="stylesheet" href="styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      class="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratham Sharma</title>
+  <link rel="icon" href="https://i.ibb.co/zRsTj3p/Frame-1-37.png" />
 
-  <body>
-    <!-------------------------- Header Area -------------------------->
-    <header class="header-area">
-      <div class="container">
-        <div class="header">
-          <a href="" class="logo">
-            <img src="files/signaturecropped.png" alt="" class="signature" />
-            <i class="fa fa-bolt"></i>
-          </a>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    class="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
+  <style>
+    /* Fixed Project Section Styles to match main page background */
+    .project-content {
+      padding: 80px 0;
+      /* background: #0f0f0f; Matching the main page background */
+      position: relative;
+      overflow: hidden;
+    }
 
-          <ul class="navbar">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+    .project-content::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><radialGradient id="a" cx="50" cy="50" r="50"><stop offset="0" stop-opacity=".05"/><stop offset="100" stop-opacity="0"/></radialGradient></defs><circle fill="url(%23a)" cx="10" cy="10" r="10"/><circle fill="url(%23a)" cx="90" cy="10" r="10"/></svg>') repeat;
+      opacity: 0.03;
+    }
 
-          <div class="menu_icon">
-            <i class="fa fa-bars"></i>
-          </div>
-        </div>
-      </div>
-    </header>
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+      position: relative;
+      z-index: 1;
+    }
 
-    <!-------------------------- Home Page -------------------------->
-    <div class="FirstElement" id="home">
-      <div class="profile-photo">
-        <img src="files/profile.jpg" alt="profile picture" />
-      </div>
-      <div class="profile-text">
-        <h5>Hi I'm</h5>
-        <br />
-        <h1>Pratham Sharma</h1>
-        <br />
-        <p>
-          Welcome to my portfolio website! I'm a passionate and aspiring
-          software engineer with a strong desire to create innovative solutions
-          and push the boundaries of technology.With a deep love for coding and
-          problem-solving, I am constantly seeking opportunities to learn and
-          grow in this ever-evolving field
-        </p>
+    .project {
+      background: rgba(25, 25, 25, 0.6);
+      /* Darker background to match main theme */
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
 
-        <div class="btn-group">
-          <a
-            href="https://drive.google.com/file/d/1F7SYoRVLlXMNI5ZaeD0qz-azi3Q6q2LV/view?usp=drive_link"
-            class="btn active"
-            >Download CV</a
-          >
-          <a href="mailto:prathamsharma1604@gmail.com" class="btn">Contact</a>
-        </div>
+    .project::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+      transition: left 0.6s;
+    }
 
-        <div class="social">
-          <a href="mailto:prathamsharma1604@gmail.com"
-            ><i class="fa fa-envelope"></i
-          ></a>
-          <a href="https://github.com/PrathamSharma169/"
-            ><i class="fa-brands fa-github"></i
-          ></a>
-          <a href="https://leetcode.com/u/PrathamSharma16/"
-            ><i class="fa fa-code"></i
-          ></a>
-          <a href="https://www.linkedin.com/in/pratham-sharma-9a5307251/"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
+    .project:hover::before {
+      left: 100%;
+    }
+
+    .project:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      background: rgba(35, 35, 35, 0.7);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .project i {
+      font-size: 48px;
+      background: linear-gradient(135deg, #00d4ff, #5a67d8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .project h4 {
+      color: #ffffff;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project p {
+      color: #cccccc;
+      line-height: 1.6;
+      margin-bottom: 25px;
+      font-size: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Smaller Project Buttons - FIXED STYLES */
+    .project-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 25px;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-btn {
+      position: relative;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 16px;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      overflow: hidden;
+      min-width: 80px;
+      height: 2rem;
+      color: white !important;
+      /* Force white text color */
+      text-align: center;
+    }
+
+    .project-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.6s;
+    }
+
+    .project-btn:hover::before {
+      left: 100%;
+    }
+
+    .github-btn {
+      background: linear-gradient(135deg, #24292e, #444d56);
+      color: white !important;
+      box-shadow: 0 2px 8px rgba(36, 41, 46, 0.3);
+    }
+
+    .github-btn:hover {
+      background: linear-gradient(135deg, #444d56, #586069);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(36, 41, 46, 0.4);
+      color: white !important;
+    }
+
+    .demo-btn {
+      background: linear-gradient(135deg, #00d4ff, #5a67d8);
+      color: white !important;
+      box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+    }
+
+    .demo-btn:hover {
+      background: linear-gradient(135deg, #5a67d8, #00d4ff);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+      color: white !important;
+    }
+
+    .project-btn i {
+      font-size: 14px;
+      vertical-align: middle;
+      display: inline-block;
+      margin-right: 6px;
+      color: white !important;
+    }
+
+    .project-btn:hover i {
+      transform: scale(1.1);
+      color: white !important;
+    }
+
+    /* Project Title Styling */
+    .project-title {
+      text-align: center;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-title h4 {
+      font-size: 42px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-title p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 300;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 15px;
+      }
+
+      .project {
+        padding: 25px 20px;
+      }
+
+      .project-buttons {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .project-btn {
+        min-width: 70px;
+        padding: 7px 14px;
+        font-size: 11px;
+      }
+
+      .project-title h4 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-content {
+        padding: 50px 0;
+      }
+
+      .project {
+        margin: 0 10px;
+        padding: 20px 15px;
+      }
+
+      .project-btn {
+        min-width: 60px;
+        padding: 6px 12px;
+        font-size: 10px;
+        gap: 4px;
+      }
+
+      .project-btn i {
+        font-size: 9px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-------------------------- Header Area -------------------------->
+  <header class="header-area">
+    <div class="container">
+      <div class="header">
+        <a href="" class="logo">
+          <img src="files/signaturecropped.png" alt="" class="signature" />
+          <i class="fa fa-bolt"></i>
+        </a>
+
+        <ul class="navbar">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="menu_icon">
+          <i class="fa fa-bars"></i>
         </div>
       </div>
     </div>
+  </header>
 
-    <!-------------------------- About Section -------------------------->
-    <section class="about-area" id="about">
-      <div class="container">
-        <div class="about">
-          <div class="about-content">
-            <h4>About Me</h4>
-            <ul>
-              <li>
-                I am currently in my pre-final year of pursuing a Bachelor's
-                Degree in Computer Science and Engineering, with a strong
-                foundation in machine learning, natural language processing
-                (NLP), large language models (LLMs), and neural networks.
-                Additionally, I have experience with key tools and technologies
-                like Python, SQL, Git, and GitHub, which I have applied in
-                various machine learning projects and experiments.
-              </li>
-              <li>
-                My expertise in these areas allows me to approach projects with
-                confidence and deliver high-quality results.I have a strong
-                belief in the value of continuous learning and staying adaptable
-                in the ever-evolving world of software engineering.
-              </li>
-              <li>
-                I actively seek out opportunities to expand my knowledge and
-                skills, embracing new technologies and approaches.Feel free to
-                explore my work and get in touch if you have any questions or
-                opportunities to collaborate.
-              </li>
-            </ul>
+  <!-------------------------- Home Page -------------------------->
+  <div class="FirstElement" id="home">
+    <div class="profile-photo">
+      <img src="files/profile.jpg" alt="profile picture" />
+    </div>
+    <div class="profile-text">
+      <h5>Hi I'm</h5>
+      <br />
+      <h1>Pratham Sharma</h1>
+      <br />
+      <p>
+        Welcome to my portfolio website! I'm a passionate and aspiring
+        software engineer with a strong desire to create innovative solutions
+        and push the boundaries of technology.With a deep love for coding and
+        problem-solving, I am constantly seeking opportunities to learn and
+        grow in this ever-evolving field
+      </p>
+
+      <div class="btn-group">
+        <a href="https://drive.google.com/file/d/1BtD19_K2bgp1mWiZqFMXwcjbhWs5O3XZ/view?usp=sharing"
+          class="btn active">Download CV</a>
+        <a href="mailto:prathamsharma1604@gmail.com" class="btn">Contact</a>
+      </div>
+
+      <div class="social">
+        <a href="mailto:prathamsharma1604@gmail.com"><i class="fa fa-envelope"></i></a>
+        <a href="https://github.com/PrathamSharma169/"><i class="fa-brands fa-github"></i></a>
+        <a href="https://leetcode.com/u/PrathamSharma16/"><i class="fa fa-code"></i></a>
+        <a href="https://www.linkedin.com/in/pratham-sharma-9a5307251/"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-------------------------- About Section -------------------------->
+  <section class="about-area" id="about">
+    <div class="container">
+      <div class="about">
+        <div class="about-content">
+          <h4>About Me</h4>
+          <ul>
+            <li>
+              I am currently in my final year, pursuing Bachelor's
+              Degree in Computer Science and Engineering, with a strong
+              foundation in machine learning, natural language processing
+              (NLP), large language models (LLMs), and neural networks.
+              Additionally, I have experience with key tools and technologies
+              like Python, Django, SQL, Git, and GitHub, which I have applied in
+              various machine learning projects and experiments.
+            </li>
+            <li>
+              My expertise in these areas allows me to approach projects with
+              confidence and deliver high-quality results.I have a strong
+              belief in the value of continuous learning and staying adaptable
+              in the ever-evolving world of software engineering.
+            </li>
+            <li>
+              I actively seek out opportunities to expand my knowledge and
+              skills, embracing new technologies and approaches.Feel free to
+              explore my work and get in touch if you have any questions or
+              opportunities to collaborate.
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-skills">
+          <ul>
+            <li>Name: Pratham Sharma</li>
+            <li>Age: 20</li>
+            <li>From: India</li>
+            <li>Email: prathamsharma1604@gmail.com</li>
+            <li>Availability: Internships & Full Time Job</li>
+            <li>Experience: Student</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack Section -->
+  <section class="techstack-area" id="techstack">
+    <div class="container">
+      <div class="techstack-title">
+        <h4>Tech Stack</h4>
+        <p>Technologies I work with</p>
+      </div>
+      <div class="skills-container">
+        <div class="skill-category">
+          <h3>Database Management</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="devicon-mysql-plain colored"></i>
+              <span>SQL</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-mysql-plain colored"></i>
+              <span>DBMS</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-mysql-plain colored"></i>
+              <span>Postgres</span>
+            </div>
           </div>
+        </div>
 
-          <div class="about-skills">
-            <ul>
-              <li>Name:Pratham Sharma</li>
-              <li>Age:20</li>
-              <li>From:India</li>
-              <li>Email:prathamsharma1604@gmail.com</li>
-              <li>Availability:Internships</li>
-              <li>Experience:Student</li>
-            </ul>
+        <div class="skill-category">
+          <h3>Software Engineering</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="fa-solid fa-code"></i>
+              <span>OOPs</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fa-solid fa-diagram-project"></i>
+              <span>DSA</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fa-solid fa-gears"></i>
+              <span>Software Engineering</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-linux-plain colored"></i>
+              <span>Linux</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-docker-plain colored"></i>
+              <span>Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Programming</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="devicon-python-plain colored"></i>
+              <span>Python</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-cplusplus-plain colored"></i>
+              <span>C++</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Machine Learning & Data Science</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="fa-solid fa-brain"></i>
+              <span>Machine Learning</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-python-plain colored"></i>
+              <span>Sklearn</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Apriori</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fa-solid fa-language"></i>
+              <span>NLP</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fa-solid fa-robot"></i>
+              <span>Reinforcement Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Deep Learning & Neural Networks</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="fa-solid fa-network-wired"></i>
+              <span>Deep Learning</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fa-solid fa-brain"></i>
+              <span>CNN</span>
+            </div>
+            <div class="skill-badge">
+              <i class="fa-solid fa-network-wired"></i>
+              <span>ANN</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Computer Vision</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="fa-solid fa-image"></i>
+              <span>Image Processing</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-tensorflow-original colored"></i>
+              <span>TensorFlow</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-tensorflow-original colored"></i>
+              <span>Keras</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3>Web Framework</h3>
+          <div class="skills-grid">
+            <div class="skill-badge">
+              <i class="devicon-flask-original"></i>
+              <span>Flask</span>
+            </div>
+            <div class="skill-badge">
+              <i class="devicon-django-plain colored"></i>
+              <span>Django</span>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Tech Stack Section -->
-    <section class="techstack-area" id="techstack">
-      <div class="container">
-        <div class="techstack-title">
-          <h4>Tech Stack</h4>
-          <p>Technologies I work with</p>
-        </div>
-        <div class="skills-container">
-          <div class="skill-category">
-            <h3>Database Management</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="devicon-mysql-plain colored"></i>
-                <span>SQL</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-mysql-plain colored"></i>
-                <span>DBMS</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-mysql-plain colored"></i>
-                <span>Postgres</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Software Engineering</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="fa-solid fa-code"></i>
-                <span>OOPs</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fa-solid fa-diagram-project"></i>
-                <span>DSA</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fa-solid fa-gears"></i>
-                <span>Software Engineering</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-linux-plain colored"></i>
-                <span>Linux</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Programming</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="devicon-python-plain colored"></i>
-                <span>Python</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-cplusplus-plain colored"></i>
-                <span>C++</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Machine Learning & Data Science</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="fa-solid fa-brain"></i>
-                <span>Machine Learning</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-python-plain colored"></i>
-                <span>Sklearn</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fa-solid fa-chart-line"></i>
-                <span>Apriori</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fa-solid fa-language"></i>
-                <span>NLP</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fa-solid fa-robot"></i>
-                <span>Reinforcement Learning</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Deep Learning & Neural Networks</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="fa-solid fa-network-wired"></i>
-                <span>Deep Learning</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fa-solid fa-brain"></i>
-                <span>CNN</span>
-              </div>
-              <div class="skill-badge">
-                <i class="fa-solid fa-network-wired"></i>
-                <span>ANN</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Computer Vision</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="fa-solid fa-image"></i>
-                <span>Image Processing</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-tensorflow-original colored"></i>
-                <span>TensorFlow</span>
-              </div>
-              <div class="skill-badge">
-                <i class="devicon-tensorflow-original colored"></i>
-                <span>Keras</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill-category">
-            <h3>Web Framework</h3>
-            <div class="skills-grid">
-              <div class="skill-badge">
-                <i class="devicon-flask-original"></i>
-                <span>Flask</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-------------- Education & Internship -------------->
-    <section class="education-content" id="education">
-      <div class="container">
-        <div class="row">
-          <div class="education">
-            <h3 class="title">Education</h3>
-            <div class="row">
-              <div class="timeline-box">
-                <div class="timeline">
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">B.E CSE-8.5 cgpa (Running)</h3>
-                    <h4 class="timeline-title">
-                      Madhav Institute Of Technology And Science Gwalior
-                    </h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> 2022-2026
-                    </h4>
-                  </div>
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">HSC-94.2%</h3>
-                    <h4 class="timeline-title">
-                      Mar Thoma Higher Secondary School, Indore
-                    </h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> 2021-2022
-                    </h4>
-                  </div>
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">SSLC-89%</h3>
-                    <h4 class="timeline-title">
-                      Mar Thoma Higher Secondary School, Indore
-                    </h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> 2019-2020
-                    </h4>
-                  </div>
+  <!-------------- Education & Internship -------------->
+  <section class="education-content" id="education">
+    <div class="container">
+      <div class="row">
+        <div class="education">
+          <h3 class="title">Education</h3>
+          <div class="row">
+            <div class="timeline-box">
+              <div class="timeline">
+                <!-- Timeline-item -->
+                <div class="timeline-item">
+                  <div class="circle-dot"></div>
+                  <h3 class="timeline-title">B.E CSE-8.5 cgpa (Running)</h3>
+                  <h4 class="timeline-title">
+                    Madhav Institute Of Technology And Science Gwalior
+                  </h4>
+                  <h4 class="timeline-title">
+                    <i class="fa fa-calendar"></i> 2022-2026
+                  </h4>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="internship">
-            <h3 class="title">Experience</h3>
-            <div class="row">
-              <div class="timeline-box">
-                <div class="timeline">
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">
-                      Google Developer Groups Techteam Lead
-                    </h3>
-                    <h4 class="timeline-title">
-                      Google Developer Groups On Campus MITS
-                    </h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> 2024-2025 (Running)
-                    </h4>
-                    <li class="timeline-text">
-                      As the lead of the Google Developer Groups (GDG) Tech
-                      Team, I am responsible for overseeing the technical
-                      operations and ensuring the smooth execution of events,
-                      workshops, and other community-driven activities. My role
-                      involves coordinating with team members, planning
-                      technical content, and guiding the team in organizing
-                      successful tech events.Leading the tech team allows me to
-                      apply my expertise in machine learning, software
-                      development, and community engagement while fostering
-                      innovation and collaboration within the developer
-                      community.
-                    </li>
-                  </div>
-                  <!-- Timeline-item -->
-                  <div class="timeline-item">
-                    <div class="circle-dot"></div>
-                    <h3 class="timeline-title">
-                      Google Developer Groups Techteam Member
-                    </h3>
-                    <h4 class="timeline-title">
-                      Google Developer Groups On Campus MITS
-                    </h4>
-                    <h4 class="timeline-title">
-                      <i class="fa fa-calendar"></i> 2023-2024
-                    </h4>
-                    <li class="timeline-text">
-                      As a member of the Google Developer Groups (GDG) Tech
-                      Team, I have had the opportunity to collaborate with a
-                      diverse group of developers, participate in organizing
-                      tech events, and contribute to community-driven
-                      initiatives. My role involves leveraging my expertise in
-                      software development and machine learning to support GDG's
-                      mission of fostering a community for developers.This
-                      experience has enhanced my skills in teamwork,
-                      communication, and staying updated with the latest
-                      industry trends.
-                    </li>
-                  </div>
+                <!-- Timeline-item -->
+                <div class="timeline-item">
+                  <div class="circle-dot"></div>
+                  <h3 class="timeline-title">HSC-94.2%</h3>
+                  <h4 class="timeline-title">
+                    Mar Thoma Higher Secondary School, Indore
+                  </h4>
+                  <h4 class="timeline-title">
+                    <i class="fa fa-calendar"></i> 2021-2022
+                  </h4>
+                </div>
+                <!-- Timeline-item -->
+                <div class="timeline-item">
+                  <div class="circle-dot"></div>
+                  <h3 class="timeline-title">SSLC-89%</h3>
+                  <h4 class="timeline-title">
+                    Mar Thoma Higher Secondary School, Indore
+                  </h4>
+                  <h4 class="timeline-title">
+                    <i class="fa fa-calendar"></i> 2019-2020
+                  </h4>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-------------------------- Projects -------------------------->
-    <section class="project-content" id="projects">
-      <div class="container">
-        <div class="project-title">
-          <h4>My Projects</h4>
-          <p>Discover my projects, where creativity meets innovation</p>
-        </div>
-        <div class="projects">
-          <!-- 1st Project -->
-          <div class="project">
-            <i class="fa fa-coffee"></i>
-            <h4>Bone Fracture Detection</h4>
-            <p>
-              Developed a neural network using TensorFlow and Keras for
-              detecting bone fractures from medical images. Applied computer
-              vision techniques to preprocess and analyze X-ray data, improving
-              diagnostic accuracy through automated fracture identification.
-            </p>
-          </div>
-          <!-- 3rd Project -->
-          <div class="project">
-            <i class="fa fa-desktop"></i>
-            <h4>Twitter Sentiment Analysis</h4>
-            <p>
-              Utilized NLP and machine learning to analyze tweet sentiments and
-              classify them into categories. Implemented a robust model to
-              interpret public opinion from social media data, improving
-              sentiment prediction accuracy.
-            </p>
-          </div>
-          <!-- 2nd Project -->
-          <div class="project">
-            <i class="fa fa-desktop"></i>
-            <h4>Spam Message Detection System</h4>
-            <p>
-              This project aims to utilize Natural Language Processing (NLP) and
-              Machine Learning techniques to predict spam messages effectively.
-              By analyzing text patterns, the model classifies messages as spam
-              or not.
-            </p>
-          </div>
-          <!-- 3rd Project -->
-          <div class="project">
-            <i class="fa fa-desktop"></i>
-            <h4>AI Powered Chatbot</h4>
-            <p>
-              Leveraged the Gemini API and Langchain technology to create a
-              dynamic chatbot capable of processing prompts, including images,
-              to generate engaging and contextually relevant descriptions.
-              Designed a multimodal interaction framework that enhances user
-              experience.
-            </p>
-          </div>
-          <!-- 4th Project -->
-          <div class="project">
-            <i class="fa fa-desktop"></i>
-            <h4>Automated AI Powered Email Sender</h4>
-            <p>
-              Developed a system using an open-source LLM and SendGrid API to generate and send personalized emails in
-              bulk. Integrated CSV-based user data to dynamically customize email content, enabling efficient delivery tracking
-              and error monitoring for large-scale email campaigns.
-            </p>
+        <div class="internship">
+          <h3 class="title">Experience</h3>
+          <div class="row">
+            <div class="timeline-box">
+              <div class="timeline">
+                <!-- Timeline-item -->
+                <div class="timeline-item">
+                  <div class="circle-dot"></div>
+                  <h3 class="timeline-title">
+                    Google Developer Groups Techteam Lead
+                  </h3>
+                  <h4 class="timeline-title">
+                    Google Developer Groups On Campus MITS
+                  </h4>
+                  <h4 class="timeline-title">
+                    <i class="fa fa-calendar"></i> 2024-2025 (Running)
+                  </h4>
+                  <li class="timeline-text">
+                    As the lead of the Google Developer Groups (GDG) Tech
+                    Team, I am responsible for overseeing the technical
+                    operations and ensuring the smooth execution of events,
+                    workshops, and other community-driven activities. My role
+                    involves coordinating with team members, planning
+                    technical content, and guiding the team in organizing
+                    successful tech events.Leading the tech team allows me to
+                    apply my expertise in machine learning, software
+                    development, and community engagement while fostering
+                    innovation and collaboration within the developer
+                    community.
+                  </li>
+                </div>
+                <!-- Timeline-item -->
+                <div class="timeline-item">
+                  <div class="circle-dot"></div>
+                  <h3 class="timeline-title">
+                    Google Developer Groups Techteam Member
+                  </h3>
+                  <h4 class="timeline-title">
+                    Google Developer Groups On Campus MITS
+                  </h4>
+                  <h4 class="timeline-title">
+                    <i class="fa fa-calendar"></i> 2023-2024
+                  </h4>
+                  <li class="timeline-text">
+                    As a member of the Google Developer Groups (GDG) Tech
+                    Team, I have had the opportunity to collaborate with a
+                    diverse group of developers, participate in organizing
+                    tech events, and contribute to community-driven
+                    initiatives. My role involves leveraging my expertise in
+                    software development and machine learning to support GDG's
+                    mission of fostering a community for developers.This
+                    experience has enhanced my skills in teamwork,
+                    communication, and staying updated with the latest
+                    industry trends.
+                  </li>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-------------------------- Contact Me -------------------------->
-
-    <section class="contact-content" id="contact">
-      <div class="container">
-        <div class="contact-title">
-          <h4>Contact Me</h4>
-          <p>Get In Touch</p>
+  <!-------------------------- Projects -------------------------->
+  <section class="project-content" id="projects">
+    <div class="container">
+      <div class="project-title">
+        <h4>My Projects</h4>
+        <p>Discover my projects, where creativity meets innovation</p>
+      </div>
+      <div class="projects">
+        <!-- 1st Project -->
+        <div class="project">
+          <i class="fa fa-coffee"></i>
+          <h4>Bone Fracture Detection</h4>
+          <p>
+            Developed a neural network using TensorFlow and Keras for
+            detecting bone fractures from medical images. Applied computer
+            vision techniques to preprocess and analyze X-ray data, improving
+            diagnostic accuracy through automated fracture identification.
+          </p>
+          <div class="project-buttons">
+            <a href="https://github.com/PrathamSharma169/Bone-Fracture-Detection" class="project-btn github-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+                <g fill="#00d4ff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(10.66667,10.66667)">
+                    <path
+                      d="M10.9,2.1c-4.6,0.5 -8.3,4.2 -8.8,8.7c-0.6,5 2.5,9.3 6.9,10.7v-2.3c0,0 -0.4,0.1 -0.9,0.1c-1.4,0 -2,-1.2 -2.1,-1.9c-0.1,-0.4 -0.3,-0.7 -0.6,-1c-0.3,-0.1 -0.4,-0.1 -0.4,-0.2c0,-0.2 0.3,-0.2 0.4,-0.2c0.6,0 1.1,0.7 1.3,1c0.5,0.8 1.1,1 1.4,1c0.4,0 0.7,-0.1 0.9,-0.2c0.1,-0.7 0.4,-1.4 1,-1.8c-2.3,-0.5 -4,-1.8 -4,-4c0,-1.1 0.5,-2.2 1.2,-3c-0.1,-0.2 -0.2,-0.7 -0.2,-1.4c0,-0.4 0,-1 0.3,-1.6c0,0 1.4,0 2.8,1.3c0.5,-0.2 1.2,-0.3 1.9,-0.3c0.7,0 1.4,0.1 2,0.3c1.3,-1.3 2.8,-1.3 2.8,-1.3c0.2,0.6 0.2,1.2 0.2,1.6c0,0.8 -0.1,1.2 -0.2,1.4c0.7,0.8 1.2,1.8 1.2,3c0,2.2 -1.7,3.5 -4,4c0.6,0.5 1,1.4 1,2.3v3.3c4.1,-1.3 7,-5.1 7,-9.5c0,-6 -5.1,-10.7 -11.1,-10z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://huggingface.co/spaces/PrathamSharma169/bone-fracture" class="project-btn demo-btn">
+              <img width="12" height="12" src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/external-share-ui-anggara-basic-outline-anggara-putra.png" alt="external-share-ui-anggara-basic-outline-anggara-putra"/>
+              Demo
+            </a>
+          </div>
         </div>
-        <div class="contact">
-          <form name="submitToGoogleSheet">
-            <input type="text" name="NAME" placeholder="Name" required />
-            <input type="email" name="EMAIL" placeholder="Email" required />
-            <input type="text" name="SUBJECT" placeholder="Subject" />
-            <textarea name="MESSAGE" placeholder="Message"></textarea>
-            <input type="submit" value="Send Message" class="submit" onclick="handleRedirect()"/>
-          </form>
-          <span id="msg"></span>
+        <!-- 2nd Project -->
+        <div class="project">
+          <i class="fa fa-desktop"></i>
+          <h4>Twitter Sentiment Analysis</h4>
+          <p>
+            Utilized NLP and machine learning to analyze tweet sentiments and
+            classify them into categories. Implemented a robust model to
+            interpret public opinion from social media data, improving
+            sentiment prediction accuracy.
+          </p>
+          <div class="project-buttons">
+            <a href="https://github.com/PrathamSharma169/Twiter_sentiment_analysis" class="project-btn github-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+                <g fill="#00d4ff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(10.66667,10.66667)">
+                    <path
+                      d="M10.9,2.1c-4.6,0.5 -8.3,4.2 -8.8,8.7c-0.6,5 2.5,9.3 6.9,10.7v-2.3c0,0 -0.4,0.1 -0.9,0.1c-1.4,0 -2,-1.2 -2.1,-1.9c-0.1,-0.4 -0.3,-0.7 -0.6,-1c-0.3,-0.1 -0.4,-0.1 -0.4,-0.2c0,-0.2 0.3,-0.2 0.4,-0.2c0.6,0 1.1,0.7 1.3,1c0.5,0.8 1.1,1 1.4,1c0.4,0 0.7,-0.1 0.9,-0.2c0.1,-0.7 0.4,-1.4 1,-1.8c-2.3,-0.5 -4,-1.8 -4,-4c0,-1.1 0.5,-2.2 1.2,-3c-0.1,-0.2 -0.2,-0.7 -0.2,-1.4c0,-0.4 0,-1 0.3,-1.6c0,0 1.4,0 2.8,1.3c0.5,-0.2 1.2,-0.3 1.9,-0.3c0.7,0 1.4,0.1 2,0.3c1.3,-1.3 2.8,-1.3 2.8,-1.3c0.2,0.6 0.2,1.2 0.2,1.6c0,0.8 -0.1,1.2 -0.2,1.4c0.7,0.8 1.2,1.8 1.2,3c0,2.2 -1.7,3.5 -4,4c0.6,0.5 1,1.4 1,2.3v3.3c4.1,-1.3 7,-5.1 7,-9.5c0,-6 -5.1,-10.7 -11.1,-10z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://twiter-sentiment-analysis.onrender.com/" class="project-btn demo-btn">
+              <img width="12" height="12" src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/external-share-ui-anggara-basic-outline-anggara-putra.png" alt="external-share-ui-anggara-basic-outline-anggara-putra"/>
+              Demo
+            </a>
+          </div>
+        </div>
+        <!-- 3rd Project -->
+        <div class="project">
+          <i class="fa fa-desktop"></i>
+          <h4>Spam Message Detection System</h4>
+          <p>
+            This project aims to utilize Natural Language Processing (NLP) and
+            Machine Learning techniques to predict spam messages effectively.
+            By analyzing text patterns, the model classifies messages as spam
+            or not.
+          </p>
+          <div class="project-buttons">
+            <a href="https://github.com/PrathamSharma169/Spam-Detection-Model" class="project-btn github-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+                <g fill="#00d4ff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(10.66667,10.66667)">
+                    <path
+                      d="M10.9,2.1c-4.6,0.5 -8.3,4.2 -8.8,8.7c-0.6,5 2.5,9.3 6.9,10.7v-2.3c0,0 -0.4,0.1 -0.9,0.1c-1.4,0 -2,-1.2 -2.1,-1.9c-0.1,-0.4 -0.3,-0.7 -0.6,-1c-0.3,-0.1 -0.4,-0.1 -0.4,-0.2c0,-0.2 0.3,-0.2 0.4,-0.2c0.6,0 1.1,0.7 1.3,1c0.5,0.8 1.1,1 1.4,1c0.4,0 0.7,-0.1 0.9,-0.2c0.1,-0.7 0.4,-1.4 1,-1.8c-2.3,-0.5 -4,-1.8 -4,-4c0,-1.1 0.5,-2.2 1.2,-3c-0.1,-0.2 -0.2,-0.7 -0.2,-1.4c0,-0.4 0,-1 0.3,-1.6c0,0 1.4,0 2.8,1.3c0.5,-0.2 1.2,-0.3 1.9,-0.3c0.7,0 1.4,0.1 2,0.3c1.3,-1.3 2.8,-1.3 2.8,-1.3c0.2,0.6 0.2,1.2 0.2,1.6c0,0.8 -0.1,1.2 -0.2,1.4c0.7,0.8 1.2,1.8 1.2,3c0,2.2 -1.7,3.5 -4,4c0.6,0.5 1,1.4 1,2.3v3.3c4.1,-1.3 7,-5.1 7,-9.5c0,-6 -5.1,-10.7 -11.1,-10z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+              GitHub
+            </a>
+            <a href="#" class="project-btn demo-btn">
+              <img width="12" height="12" src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/external-share-ui-anggara-basic-outline-anggara-putra.png" alt="external-share-ui-anggara-basic-outline-anggara-putra"/>
+              Demo
+            </a>
+          </div>
+        </div>
+        <!-- 4th Project -->
+        <div class="project">
+          <i class="fa fa-desktop"></i>
+          <h4>BLOGSTER – MICROBLOGGING WEB APP</h4>
+          <p>
+            Created a full-stack Medium-like platform with Django, PostgreSQL, and Cloudinary. Features include
+            authentication, blog creation with image upload, likes, comments, comment analyis dashboard with smart AI
+            integration and responsive UI.
+          </p>
+          <div class="project-buttons">
+            <a href="https://github.com/PrathamSharma169/Blog_website" class="project-btn github-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+                <g fill="#00d4ff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(10.66667,10.66667)">
+                    <path
+                      d="M10.9,2.1c-4.6,0.5 -8.3,4.2 -8.8,8.7c-0.6,5 2.5,9.3 6.9,10.7v-2.3c0,0 -0.4,0.1 -0.9,0.1c-1.4,0 -2,-1.2 -2.1,-1.9c-0.1,-0.4 -0.3,-0.7 -0.6,-1c-0.3,-0.1 -0.4,-0.1 -0.4,-0.2c0,-0.2 0.3,-0.2 0.4,-0.2c0.6,0 1.1,0.7 1.3,1c0.5,0.8 1.1,1 1.4,1c0.4,0 0.7,-0.1 0.9,-0.2c0.1,-0.7 0.4,-1.4 1,-1.8c-2.3,-0.5 -4,-1.8 -4,-4c0,-1.1 0.5,-2.2 1.2,-3c-0.1,-0.2 -0.2,-0.7 -0.2,-1.4c0,-0.4 0,-1 0.3,-1.6c0,0 1.4,0 2.8,1.3c0.5,-0.2 1.2,-0.3 1.9,-0.3c0.7,0 1.4,0.1 2,0.3c1.3,-1.3 2.8,-1.3 2.8,-1.3c0.2,0.6 0.2,1.2 0.2,1.6c0,0.8 -0.1,1.2 -0.2,1.4c0.7,0.8 1.2,1.8 1.2,3c0,2.2 -1.7,3.5 -4,4c0.6,0.5 1,1.4 1,2.3v3.3c4.1,-1.3 7,-5.1 7,-9.5c0,-6 -5.1,-10.7 -11.1,-10z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://blog-website-duf9.onrender.com/" class="project-btn demo-btn">
+              <img width="12" height="12" src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/external-share-ui-anggara-basic-outline-anggara-putra.png" alt="external-share-ui-anggara-basic-outline-anggara-putra"/>
+              Demo
+            </a>
+          </div>
+        </div>
+        <!-- 5th Project -->
+        <div class="project">
+          <i class="fa fa-desktop"></i>
+          <h4>Automated AI Powered Email Sender</h4>
+          <p>
+            Developed a system using an open-source LLM and SendGrid API to generate and send personalized emails in
+            bulk. Integrated CSV-based user data to dynamically customize email content, enabling efficient delivery
+            tracking
+            and error monitoring for large-scale email campaigns.
+          </p>
+          <div class="project-buttons">
+            <a href="https://github.com/PrathamSharma169/Automated_Ai_Generated_Email_Sender"
+              class="project-btn github-btn">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0,0,256,256">
+                <g fill="#00d4ff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(10.66667,10.66667)">
+                    <path
+                      d="M10.9,2.1c-4.6,0.5 -8.3,4.2 -8.8,8.7c-0.6,5 2.5,9.3 6.9,10.7v-2.3c0,0 -0.4,0.1 -0.9,0.1c-1.4,0 -2,-1.2 -2.1,-1.9c-0.1,-0.4 -0.3,-0.7 -0.6,-1c-0.3,-0.1 -0.4,-0.1 -0.4,-0.2c0,-0.2 0.3,-0.2 0.4,-0.2c0.6,0 1.1,0.7 1.3,1c0.5,0.8 1.1,1 1.4,1c0.4,0 0.7,-0.1 0.9,-0.2c0.1,-0.7 0.4,-1.4 1,-1.8c-2.3,-0.5 -4,-1.8 -4,-4c0,-1.1 0.5,-2.2 1.2,-3c-0.1,-0.2 -0.2,-0.7 -0.2,-1.4c0,-0.4 0,-1 0.3,-1.6c0,0 1.4,0 2.8,1.3c0.5,-0.2 1.2,-0.3 1.9,-0.3c0.7,0 1.4,0.1 2,0.3c1.3,-1.3 2.8,-1.3 2.8,-1.3c0.2,0.6 0.2,1.2 0.2,1.6c0,0.8 -0.1,1.2 -0.2,1.4c0.7,0.8 1.2,1.8 1.2,3c0,2.2 -1.7,3.5 -4,4c0.6,0.5 1,1.4 1,2.3v3.3c4.1,-1.3 7,-5.1 7,-9.5c0,-6 -5.1,-10.7 -11.1,-10z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+              GitHub
+            </a>
+            <a href="#" class="project-btn demo-btn">
+              <img width="12" height="12" src="https://img.icons8.com/external-anggara-basic-outline-anggara-putra/24/external-share-ui-anggara-basic-outline-anggara-putra.png" alt="external-share-ui-anggara-basic-outline-anggara-putra"/>
+              Demo
+            </a>
+          </div>
         </div>
       </div>
-      <script>
-        function handleRedirect() {
-            alert("Message Sent!");
-            window.location.href = "https://prathamsharma169.github.io/Portfolio-website/";
-        }
+    </div>
+  </section>
+
+  <!-------------------------- Contact Me -------------------------->
+
+  <section class="contact-content" id="contact">
+    <div class="container">
+      <div class="contact-title">
+        <h4>Contact Me</h4>
+        <p>Get In Touch</p>
+      </div>
+      <div class="contact">
+        <form name="submitToGoogleSheet">
+          <input type="text" name="NAME" placeholder="Name" required />
+          <input type="email" name="EMAIL" placeholder="Email" required />
+          <input type="text" name="SUBJECT" placeholder="Subject" />
+          <textarea name="MESSAGE" placeholder="Message"></textarea>
+          <input type="submit" value="Send Message" class="submit" onclick="handleRedirect()" />
+        </form>
+        <span id="msg"></span>
+      </div>
+    </div>
+    <script>
+      function handleRedirect() {
+        alert("Message Sent!");
+        window.location.href = "https://prathamsharma169.github.io/Portfolio-website/";
+      }
     </script>
-    </section>
+  </section>
 
-    <!-------------------------- JS -------------------------->
-    <script
-      src="https://code.jquery.com/jquery-3.7.0.min.js"
-      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="script.js"></script>
+  <!-------------------------- JS -------------------------->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="script.js"></script>
 
-    <!-------------------------- Footer section -------------------------->
-    <footer class="footer">
-      <small class="message">Thanks for visiting and happy coding!</small>
-      <small class="copyright"
-        >&copy; Copyright @2025 Pratham Sharma All rights reserved.</small
-      >
-    </footer>
-  </body>
+  <!-------------------------- Footer section -------------------------->
+  <footer class="footer">
+    <small class="message">Thanks for visiting and happy coding!</small>
+    <small class="copyright">&copy; Copyright @2025 Pratham Sharma All rights reserved.</small>
+  </footer>
+</body>
+
 </html>
